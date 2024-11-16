@@ -1,0 +1,574 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 0px;
+  margin: 0;
+}
+input {
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: bold;
+}
+#clock {
+  position: absolute;
+  font-family: Arial;
+  font-size: 40px;
+  font-weight: bold;
+  right: 20px;
+  vertical-align: middle;
+}
+
+#main {
+  padding: 0px;
+  /*    */
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#infoPane {
+  height: 8em;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  /* margin-top: 10px; */
+  /* padding: 1em; */
+  background-color: #f2f2f2;
+}
+
+#mainPane {
+  width: 100%;
+  height: 100vh;
+  top: 50px;
+  background-color: #f2f2f2;
+}
+
+/* as attr for now */
+#mainPane + table {
+  width: 100%;
+}
+
+#btnPane {
+  border-collapse: collapse;
+  /* border: 1px solid #EAEAEA; */
+  top: 55px;
+  right: 0px;
+  padding: 0px 15px 0px 0px;
+  position: absolute;
+  /* overflow: hidden; */
+}
+/* need css parent selector */
+#btnPaneCell {
+  background-color: #f2f2f2;
+}
+#compPane {
+  border-collapse: collapse;
+  border: 3px solid #eaeaea;
+  background-color: #ffffff;
+  -moz-border-radius-topleft: 50px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -webkit-border-top-left-radius: 50px;
+  border-radius: 10px;
+  border-top-left-radius: 50px;
+  overflow-y: scroll;
+  height: 1400px;
+}
+
+#finishBtn {
+  background-color: #e6ffe6;
+  border: 3px solid #66ff66;
+  -moz-border-radius-topleft: 10px;
+  -webkit-border-top-left-radius: 10px;
+  border-top-left-radius: 10px;
+  display: block;
+  height: 144px;
+  left: 2px;
+  text-align: center;
+  top: 2px;
+  width: 144px;
+  cursor: pointer;
+}
+
+#finishBtn .finishLabel {
+  font-family: "Arial Black", "DroidSans", "Georgia", "sans";
+  font-size: 40px;
+  color: #999;
+  top: 40px;
+  width: 100%;
+  text-align: center;
+}
+#finishBtn:hover {
+  background-color: #ccc;
+}
+#finishBtn.mousedown {
+  background-color: #f1f1f1;
+}
+
+#compGrid tr:hover {
+  background-color: #eaeaea;
+}
+.absolute {
+  position: absolute;
+}
+.adjButton {
+  background-color: #eaeaea;
+  display: none;
+  text-align: center;
+}
+
+.adjTime {
+  left: 200px;
+  position: relative;
+  top: 0px;
+  width: 20px;
+}
+
+.adjCue {
+  left: 100px;
+  position: relative;
+  top: 0px;
+  width: 20px;
+}
+
+.adj {
+  width: 22px;
+  position: relative;
+  z-index: 1;
+}
+.adj ul {
+  border-collapse: collapse;
+  display: inline-block; /*display:none;*/
+  list-style: none;
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
+}
+.adj li {
+  border-collapse: collapse;
+  border-bottom: none;
+  border-top: none;
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  color: #e0e0e0;
+  margin: 0px;
+  padding: 30px 0px 0px 0px;
+  text-align: center;
+  vertical-align: bottom;
+  width: 40px;
+  height: 56px;
+}
+.adj li:hover {
+  border-color: aqua;
+}
+.adj li.plus {
+  border: solid 1px;
+  -moz-border-radius-topleft: 10px;
+  -webkit-border-top-left-radius: 10px;
+  border-top-left-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.33);
+}
+.adj li.minus {
+  border: solid 1px;
+  -moz-border-radius-bottomleft: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.33);
+}
+
+.app {
+  width: 100%;
+  border-collapse: collapse;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.app table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.appTable {
+  z-index: 0;
+  margin-block-end: 400em;
+  /* height: 1400px; */
+}
+.boat {
+  font-size: large;
+  font-weight: bold;
+  text-align: right;
+}
+.boat .fleet {
+  font-family: "Arial Narrow";
+  font-size: large;
+  left: 1px;
+}
+.boat .rating {
+  font-family: "Arial Narrow";
+  font-size: large;
+  left: 1px;
+}
+.boat .helm {
+  font-size: large;
+  top: 0px;
+  left: 1px;
+}
+.boat .boatName {
+  font-size: 60px;
+  height: 95px;
+  overflow: hidden;
+}
+.button {
+  color: #e0e0e0; /*display:none;*/
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #e0e0e0;
+  color: #ffffff;
+}
+
+.cueNo {
+  display: inline;
+  left: 10px;
+  position: absolute;
+  text-align: left;
+  z-index: 1;
+}
+.compId {
+  visibility: hidden;
+  height: 0px;
+  width: 0px;
+}
+.compPanel {
+  font-family: "Arial Black", "DroidSans", "Georgia", "sans";
+  position: relative;
+}
+
+.compPanel {
+  -moz-border-radius-topleft: 50px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -webkit-border-top-left-radius: 50px;
+  border-radius: 10px;
+  border-top-left-radius: 50px;
+  border: 4px solid #a0a0a0;
+  z-index: 10;
+}
+.compPanel:hover {
+  /*background-color: #EAEAEA;*/
+  border-color: #d0d0d0;
+}
+.compPanel td {
+  padding: 0px;
+}
+
+.compPanel td.boat {
+  font-size: 24px;
+  padding-right: 10px;
+}
+.compRow {
+  width: 100%;
+  height: 180px;
+}
+.finished,
+.finished:hover {
+  background-color: #f2f2f2;
+  /*
+        border-width:2px;
+        */
+  border-color: #eaeaea;
+  /*
+        border-style: dotted; 
+        */
+}
+.finished .time {
+  border: none;
+}
+
+.finished .adj li {
+  border-left: 1px solid #cccccc;
+  border-top: none;
+  color: #cccccc;
+}
+.finished .adj li.plus {
+  border-top: none;
+  border-bottom: 1px solid #cccccc;
+}
+
+.last {
+  border-bottom: none;
+  border-right: none;
+}
+
+.spacer {
+  height: 5px;
+}
+.selected {
+  align-self: auto;
+}
+
+.time {
+  margin: 0px;
+  padding: 0px;
+  background-color: rgba(255, 255, 255, 0.33);
+  width: 300px;
+  z-index: 1;
+}
+.time ul {
+  bottom: 0px;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  right: 9px;
+}
+.time li {
+  border-collapse: collapse;
+  border: 1px solid black;
+  display: inline;
+  height: 10px;
+  left: -40px;
+  list-style: none;
+  padding: 0px;
+  text-align: center;
+  width: 80px;
+}
+.timeButtons {
+  border-collapse: collapse;
+  border: 1px solid #eaeaea;
+  color: #e0e0e0;
+  display: none;
+  font-size: xx-small;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+.timeButtons td {
+  padding: 0px;
+}
+
+.timeButtons th {
+  font-family: "Arial Narrow";
+  font-size: 6px;
+  margin: 0px;
+  padding: 0px;
+}
+.timeButtons td {
+  border: 1px solid #eaeaea;
+  text-align: center;
+  width: 10px;
+}
+/*		
+    .timeTable{
+        display:none;
+    }
+    */
+.timeTable {
+  width: 200px;
+}
+
+.timeTable td {
+  padding: 0px;
+}
+
+.timeDisplay {
+  height: 25px;
+  text-align: center;
+  font-size: 45px;
+}
+.timeDisplay > input {
+  visibility: hidden;
+}
+.timeDisplay.show-input {
+  -webkit-text-stroke: 1px black;
+  -webkit-text-fill-color: rgb(177, 171, 171);
+  font-size: 40px;
+}
+
+.timeDisplay.show-input > input {
+  visibility: visible;
+  -webkit-text-fill-color: black;
+  z-index: 10;
+}
+
+.btn {
+  font-family: "Arial Black", "DroidSans", "Georgia", "sans";
+  background-color: #eaeaea;
+  border: 1px solid #cccccc;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.btn:hover {
+  background-color: #ccc;
+}
+.btn.mousedown {
+  background-color: #f1f1f1;
+}
+
+#startSetBtn {
+  position: absolute;
+  padding-top: 5px;
+  font-size: 11px;
+  top: 0px;
+  height: 25px;
+  width: 65px;
+  left: 202px;
+  vertical-align: middle;
+}
+
+#raceSelect {
+  position: absolute;
+  top: 20px;
+  left: 5px;
+  width: 200px;
+}
+
+#codeBtn {
+  position: absolute;
+  font-family: "Arial Black", "DroidSans", "Georgia", "sans";
+  font-size: 12px;
+  top: 195px;
+  width: 147px;
+  height: 147px;
+  background-color: #eaeaea;
+  border: 1px solid #cccccc;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#codeBtn:hover {
+  background-color: #ccc;
+}
+#codeBtn.mousedown {
+  background-color: #f1f1f1;
+}
+#codeLabel {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 55px;
+  color: #999;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#codeSelect {
+  position: absolute;
+  top: 157px;
+}
+#codeSelect > select {
+  width: 147px;
+  height: 30px;
+  font-weight: bold;
+  font-size: 25px;
+}
+#startTime {
+  position: absolute;
+  top: 44px;
+  left: 5px;
+  width: 130px;
+}
+input[type="text"] {
+  width: 200px;
+  height: 30px;
+  font-size: 22px;
+  background-color: #cccccc;
+}
+#finishPane {
+  position: absolute;
+  top: 335px;
+  font-family: "Arial Black", "DroidSans", "Georgia", "sans";
+  font-size: 14px;
+}
+.finishListTitle {
+  margin-left: 0px;
+  padding: 0px;
+  text-align: left;
+}
+.finishListTitle li {
+  margin-left: 8px;
+  font-size: 10px;
+}
+#save {
+  position: absolute;
+  top: 80px;
+  left: 5px;
+  width: 200px;
+}
+#export {
+  position: absolute;
+  top: 80px;
+  left: 210px;
+  width: 60px;
+}
+#raceInfo {
+  position: absolute;
+  left: 300px;
+}
+/* #raceSelect{
+         top: 5px;
+     } */
+template {
+  display: none;
+}
+.hidden {
+  display: none;
+}
+.dropbtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  width: 200px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+}
+.dropDown span {
+  width: 200px;
+}
+
+.dropdown-content {
+  display: none;
+  position: fixed;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  z-index: 999;
+}
+.dropdown-content .disabled {
+  background-color: rgb(116, 114, 114);
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* .dropdown-content a:hover {background-color: #f1f1f1} */
+.dropdown-content .disabled:hover {
+  background-color: #333;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}

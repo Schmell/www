@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Start here</title>
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(216, 216, 216);
+      }
+    </style>
+    <!-- <link rel="manifest" href="manifest.webmanifest"> -->
+  </head>
+  <body>
+    <h3><a href="racing.html">Racing</a></h3>
+    <h3><a href="localStorage.html">localStorageManager</a></h3>
+    <!-- <h3> <a href="dbManger.html">dbManager</a></h3> -->
+
+    <script>
+      let SW;
+      const registerSW = () => {
+        if ("serviceWorker" in navigator) {
+          // Register a service worker hosted at the root of the site
+          navigator.serviceWorker.register("./sw.js").then(
+            (registration) => {
+              SW =
+                registration.installing ||
+                registration.waiting ||
+                registration.active;
+            },
+            (error) => {
+              console.log("Service worker registration failed:", error);
+            }
+          );
+          //listen for the latest sw
+          navigator.serviceWorker.addEventListener(
+            "controllerchange",
+            async () => {
+              SW = navigator.serviceWorker.controller;
+            }
+          );
+          //listen for messages from the service worker
+          navigator.serviceWorker.addEventListener("message", onMessage);
+        } else {
+          console.log("Service workers are not supported.");
+        }
+      }; // registerDbManager
+      const onMessage = ({ data }) => {
+        //got a message from the service worker
+        console.log("Web page receiving", data);
+        //TODO: check for savedPerson and build the list and clear the form
+        // if ('savedPerson' in data) {
+        //   APP.showPeople();
+        //   document.getElementById('name').value = '';
+        // }
+      };
+      // registerSW()
+    </script>
+  </body>
+</html>

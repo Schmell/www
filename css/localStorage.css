@@ -1,0 +1,137 @@
+:root {
+  --primary-color: cornflowerblue;
+  --secondary-color: rgba(100, 148, 237, 0.5);
+  --cta-color: lightgreen;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  font-size: 1rem;
+}
+
+p {
+  margin-block-start: 32px;
+  margin-block-end: 0px;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn {
+  padding: 0.35em;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.486);
+  background-color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  box-shadow: 0.05em 0.05em 0.25em;
+}
+.cta {
+  background-color: var(--cta-color);
+  border: 0;
+}
+.mb-1 {
+  margin-bottom: 1em;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+#fileSelect {
+  margin-block-start: 8px;
+}
+
+label {
+  display: block;
+  margin-block: 1.5em 0.15em;
+}
+
+.custom-file-input::before {
+  content: "Select .blw";
+  display: inline-block;
+  background: linear-gradient(top, #f9f9f9, #e3e3e3);
+  outline: none;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.custom-file-input:hover::before {
+  border-color: black;
+}
+
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+/* Style the side navigation */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+}
+
+/* Side navigation links */
+.sidenav a {
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color on hover */
+.sidenav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the content */
+.content {
+  /* width: 100%; */
+  margin-left: 200px;
+  padding-left: 20px;
+}
+
+#racingButton {
+  margin: 1.5em 0em;
+}
+
+#urlSelect {
+  margin-block: 0.5em 0.5em;
+  width: 24em;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  line-height: 1.5rem;
+  box-shadow: 0.025em 0.025em inset;
+}
+
+#backUpFile {
+  margin-block: 2em 4em;
+}
+
+#displayData {
+  word-wrap: break-word;
+  font-size: 14px;
+  /* margin-inline-start: 200px; */
+}
